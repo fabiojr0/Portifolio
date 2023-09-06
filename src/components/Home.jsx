@@ -13,7 +13,7 @@ function Home() {
     return (
       <>
       <div className='relative'>
-        <img src="/wavesMobile.png" alt="waves" className="sm:hidden w-screen object-cover"/>
+        <img src="./wavesMobile.png" alt="waves" className="sm:hidden w-screen object-cover"/>
         <div className='absolute top-0 p-4 w-screen flex justify-between'>
           <a href='https://github.com/fabiojr0' target='_blank'>
             <FontAwesomeIcon icon={faGithub} style={iconStyles} />
@@ -32,11 +32,11 @@ function Home() {
             <p className='text-sm font-semibold'>Desenvolvedor Front-end</p>
               <button className='gradientBP text-white py-2 font-semibold relative w-40'>
                 Baixar currículo
-                <img src='/blueWave.png' className='absolute h-10 -left-1 top-0'/>
-                <img src='/purpleWave.png' className='absolute h-10 -right-1 top-0'/>
+                <img src='./blueWave.png' className='absolute h-10 -left-1 top-0'/>
+                <img src='./purpleWave.png' className='absolute h-10 -right-1 top-0'/>
               </button>
           </span>
-          <img src='/portifolioLogo.png' className='h-16 w-16'/>
+          <img src='./portifolioLogo.png' className='h-16 w-16'/>
         </div>
       </div>
       </>
