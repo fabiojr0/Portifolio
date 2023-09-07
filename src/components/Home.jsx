@@ -36,8 +36,12 @@ function Home() {
           <span className='flex gap-2 flex-col'>
             <h1 className='gradientText gradientBP text-lg font-bold whitespace-nowrap md:text-3xl'>Olá, sou o Fábio Júnior</h1>
             <p className='text-sm font-semibold md:text-lg dark:text-white'>Desenvolvedor Front-end</p>
-              <button className='gradientBP text-white py-2 font-semibold relative w-40 active:translate-y-1 transition-all hover:text-zinc-200 shadow-lg'>
+              <button className='gradientBP text-white py-2 font-semibold relative w-40 active:translate-y-1 
+              transition-all hover:text-zinc-200 shadow-lg'>
+                <a  href="./Portifolio/curriculo_fabio_junior.pdf" target='_blank'>
+
                 Baixar currículo <FontAwesomeIcon icon={faFileArrowDown} />
+                </a>
                 <img src='./blueWave.png' className='absolute h-10 -left-1 top-0'/>
                 <img src='./purpleWave.png' className='absolute h-10 -right-1 top-0'/>
               </button>
