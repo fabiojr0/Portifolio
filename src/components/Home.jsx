@@ -38,7 +38,7 @@ function Home() {
             <p className='text-sm font-semibold md:text-lg dark:text-white'>Desenvolvedor Front-end</p>
               <button className='gradientBP text-white py-2 font-semibold relative w-40 active:translate-y-1 
               transition-all hover:text-zinc-200 shadow-lg'>
-                <a  href="./Portifolio/curriculo_fabio_junior.pdf" target='_blank'>
+                <a  href="./curriculo_fabio_junior.pdf" target='_blank'>
 
                 Baixar currículo <FontAwesomeIcon icon={faFileArrowDown} />
                 </a>
