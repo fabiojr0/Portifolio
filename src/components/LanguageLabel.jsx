@@ -5,7 +5,7 @@ function Projects(props) {
 
     return(
         <div>
-            <p className={`${props.color} rounded-full text-xs p-1 text-white font-semibold`}>{props.name}</p>
+            <p className={`${props.color} rounded-full text-xs p-2 text-white font-semibold`}>{props.name}</p>
         </div>
     )
 
