@@ -66,19 +66,19 @@ function Habilities() {
       id="Habilities"
     >
       <h2 className="gradientText gradientBP font-bold text-xl">Habilidades</h2>
-      <div className="flex flex-wrap gap-8 px-40">
+      <div className="flex flex-wrap justify-between md:justify-start gap-8 px-16 lg:px-40 2xl:px-96">
         {tecnologiesImgs.map((item) => {
           return (
             <div
-              className="group flex flex-col items-center justify-center drop-shadow-xl gap-4"
+              className="group flex flex-col items-center justify-center drop-shadow-xl gap-4 max-w-[80px]"
               key={item.name}
             >
               <img
                 src={item.img}
-                className="h-full aspect-square group-hover:scale-125 transition-all max-h-20"
+                className="w-full aspect-square group-hover:scale-125 transition-all "
                 alt={item.name}
               />
-              <p className="max-sm:hidden scale-0 group-hover:scale-100 font-semibold transition-all text-gray-700 dark:text-zinc-100">
+              <p className="lg:scale-0 text-center group-hover:scale-100 font-semibold transition-all text-gray-700 dark:text-zinc-100">
                 {item.name}
               </p>
             </div>
