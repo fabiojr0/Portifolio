@@ -1,89 +1,75 @@
 import React from "react";
 
 function Habilities() {
-  const tecnologiesImgs = [
+  const skillCategories = [
     {
-      name: "React",
-      img: "./tecnologies/react.png",
+      title: "Frontend",
+      icon: "💻",
+      bgColor: "bg-blue-500",
+      skills: ["NextJS", "React Native","React", "TypeScript", "Tailwind CSS"],
     },
     {
-      name: "Tailwind CSS",
-      img: "./tecnologies/tailwindcss.svg",
+      title: "Design",
+      icon: "🎨",
+      bgColor: "bg-purple-500",
+      skills: ["Figma", "UI/UX", "Responsive Design"],
     },
+    // {
+    //   title: "Backend",
+    //   icon: "⚙️",
+    //   bgColor: "bg-blue-600",
+    //   skills: ["Node.js", "Java", "Python"]
+    // },
     {
-      name: "TypeScript",
-      img: "./tecnologies/typescript.png",
-    },
-    {
-      name: "JavaScript",
-      img: "./tecnologies/js.png",
-    },
-    {
-      name: "Figma",
-      img: "./tecnologies/figma.png",
-    },
-    {
-      name: "HTML",
-      img: "./tecnologies/html.png",
-    },
-    {
-      name: "CSS",
-      img: "./tecnologies/css.png",
-    },
-    {
-      name: "Java",
-      img: "./tecnologies/java.png",
-    },
-    {
-      name: "Python",
-      img: "./tecnologies/python.png",
-    },
-    {
-      name: "Node.js",
-      img: "./tecnologies/node-js.png",
-    },
-    {
-      name: "C#",
-      img: "./tecnologies/c-sharp.png",
-    },
-    {
-      name: "Unity",
-      img: "./tecnologies/unity.png",
-    },
-    {
-      name: "SQL",
-      img: "./tecnologies/sql.png",
-    },
-    {
-      name: "Git",
-      img: "./tecnologies/git.png",
+      title: "Ferramentas",
+      icon: "🔧",
+      bgColor: "bg-pink-500",
+      skills: ["Git", "SQL", "Redux", "Unity"],
     },
   ];
 
   return (
-    <div
-      className="flex flex-col justify-between items-center gap-10"
-      id="Habilities"
-    >
-      <h2 className="gradientText gradientBP font-bold text-xl">Habilidades</h2>
-      <div className="flex flex-wrap justify-between md:justify-start gap-8 px-16 lg:px-40 2xl:px-96">
-        {tecnologiesImgs.map((item) => {
-          return (
+    <div className="py-20" id="Habilities">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold gradientText gradientBP mb-4">Habilidades</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Tecnologias e ferramentas que utilizo para criar soluções inovadoras
+          </p>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="flex flex-row flex-wrap items-center justify-center gap-8">
+          {skillCategories.map((category, index) => (
             <div
-              className="group flex flex-col items-center justify-center drop-shadow-xl gap-4 max-w-[80px]"
-              key={item.name}
+              key={index}
+              className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 h-64 aspect-video"
             >
-              <img
-                src={item.img}
-                className="w-full aspect-square group-hover:scale-125 transition-all "
-                alt={item.name}
-              />
-              <p className="lg:scale-0 text-center group-hover:scale-100 font-semibold transition-all text-gray-700 dark:text-zinc-100">
-                {item.name}
-              </p>
+              {/* Category Icon */}
+              <div
+                className={`w-16 h-16 ${category.bgColor} rounded-full flex items-center justify-center text-white text-2xl mb-4`}
+              >
+                {category.icon}
+              </div>
+
+              {/* Category Title */}
+              <h3 className="text-xl font-bold text-gray-800 mb-4">{category.title}</h3>
+
+              {/* Skills Tags */}
+              <div className="flex  flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="px-3 py-1 bg-blue-50 text-blue-700 text-sm font-medium rounded-full pointer-events-none"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

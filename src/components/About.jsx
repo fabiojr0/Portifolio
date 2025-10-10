@@ -1,53 +1,90 @@
-import React from 'react';
-import { faGraduationCap, faUserTie, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faGraduationCap, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 
 function About() {
-    const aboutInfos = [
+    const timelineData = [
         {
             title: "Formação Profissional",
-            date: "2022.2",
-            type: "Unilasalle",
-            desc: "Atualmente cursando o 3º período de Sistemas de Informação",
-            icon: <FontAwesomeIcon icon={faGraduationCap}/>
+            subtitle: "Unisociesc",
+            description: "Atualmente cursando o 3º período de Sistemas de Informação",
+            icon: faGraduationCap,
+            iconBg: "bg-blue-500",
+            year: "2022"
         },
         {
             title: "Experiência Profissional",
-            date: "2023.1",
-            type: "Desenvolvedor Full-Stack",
-            desc: "Participando da empresa júnior da Unilasalle Ânimo Consultoria",
-            icon: <FontAwesomeIcon icon={faUserTie}/>
+            subtitle: "Desenvolvedor Full-Stack",
+            description: "Participando da empresa Júnior da Unidade Anima Consultoria",
+            icon: faBriefcase,
+            iconBg: "bg-purple-500",
+            year: "2023+"
         },
         {
-            title: "Trabalho voluntario",
-            date: "2023.1",
-            type: "Monitor",
-            desc: "Contribuo com monitorias de programação e desenvolvimento web",
-            icon: <FontAwesomeIcon icon={faPersonChalkboard} />
+            title: "Trabalho Voluntário",
+            subtitle: "Monitor",
+            description: "Contribuo com monitorias de programação e desenvolvimento web",
+            icon: faHeart,
+            iconBg: "bg-pink-500",
+            year: "2023+"
         }
-    ]
+    ];
 
   return (
-    <div className='flex flex-col items-center' id='About'>
-        <h2 className='gradientText gradientBP font-bold text-xl'>Sobre mim</h2>
-        <div className='flex flex-col items-start p-4 gap-6 sm:flex-row sm:items-center sm:justify-around sm:w-screen sm:p-16 sm:gap-8'>
-            {
-                aboutInfos.map((item) => {
-                    return (
-                        <div className='flex flex-col items-start gap-2 sm:w-1/4' key={item.title}>
-                            <h3 className='font-semibold flex gap-1 lg:text-lg dark:text-zinc-100'>{item.title}{item.icon}</h3>
-                            <div className='flex items-center gap-4'>
-                                <p className='text-sm lg:text-base dark:text-zinc-200'>{item.date}</p>
-                                <hr className='bg-white w-0.5 h-4 '/>
-                                <p className='text-sm lg:text-base dark:text-zinc-200'>{item.type}</p>
-                            </div>
-                            <p className='text-sm lg:text-base dark:text-zinc-200'>{item.desc}</p>
-                        </div>
-                    ) 
-                    
-                })
-            }
+    <div className="py-20 bg-white" id="About">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold gradientText gradientBP mb-4">
+            Sobre mim
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Minha jornada no desenvolvimento de software
+          </p>
         </div>
+
+        {/* Timeline */}
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-500"></div>
+            
+            {/* Timeline Items */}
+            <div className="space-y-12">
+              {timelineData.map((item, index) => (
+                <div key={index} className="relative flex items-start">
+                  {/* Timeline Icon */}
+                  <div className={`relative z-10 w-16 h-16 ${item.iconBg} rounded-full flex items-center justify-center text-white shadow-lg`}>
+                    <FontAwesomeIcon icon={item.icon} className="text-xl" />
+                  </div>
+                  
+                  {/* Timeline Content */}
+                  <div className="ml-8 flex-1">
+                    <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-800 mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-lg font-semibold text-gray-600">
+                            {item.subtitle}
+                          </p>
+                        </div>
+                        <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                          {item.year}
+                        </span>
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

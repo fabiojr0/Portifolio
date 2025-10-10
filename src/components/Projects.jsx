@@ -1,111 +1,111 @@
-import React from "react";
-import LanguageLabel from "./LanguageLabel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { useTheme } from "../hooks/useTheme";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 function Projects() {
-  const { theme, setTheme } = useTheme();
-  const iconStyles = {
-    color: theme === "dark" ? "#ffffff" : "#000000",
-    fontSize: "20px",
-  };
-
-  const projectsImgs = [
+  const projects = [
+    {
+      name: "Grao Market",
+      desc: "App de Delivery focado em mercados",
+      img: "./projects/Baoo.png",
+      tags: ["React", "Node.js", "MongoDB"],
+      codeLink: "https://github.com/fabiojr0/SoundScout",
+      demoLink: "https://github.com/fabiojr0/SoundScout"
+    },
     {
       name: "Sound Scout",
-      desc: "Projeto consumindo da API do Spotify.",
+      desc: "Projeto consumindo da API do Spotify",
       img: "./projects/soundScout.png",
-      languages: [{ React: "bg-blue-500" }, { Tailwind: "bg-sky-500" }],
-      repoLink: "https://github.com/fabiojr0/SoundScout",
-      hr: true,
+      tags: ["React", "TypeScript"],
+      codeLink: "https://github.com/fabiojr0/SoundScout",
+      demoLink: "https://github.com/fabiojr0/SoundScout"
     },
     {
       name: "Pipocando Filmes",
-      desc: "Projeto consumindo APIs de filme da OMDB e TMDB.",
+      desc: "Projeto consumindo APIs de filme do OMDb e TMDb",
       img: "./projects/Pipocando.png",
-      languages: [{ React: "bg-blue-500" }, { Tailwind: "bg-sky-500" }],
-      repoLink: "https://github.com/fabiojr0/Pipocando-filmes",
-      hr: true,
-    },
-    {
-      name: "Flor do Dia",
-      desc: "Trabalho para a faculdade, a ideia foi fazer floricultura fictícia.",
-      img: "./projects/FlorDoDia.png",
-      languages: [
-        { HTML: "bg-orange-700" },
-        { CSS: "bg-blue-700" },
-        { JavaScript: "bg-yellow-400" },
-      ],
-      repoLink: "https://github.com/fabiojr0/Flor-do-Dia",
-      hr: true,
-    },
-    {
-      name: "Marvelous",
-      desc: "Projeto Tailwind, consumindo API da Marvel.",
-      img: "./projects/Marvelous.png",
-      languages: [
-        { HTML: "bg-orange-700" },
-        { Tailwind: "bg-sky-500" },
-        { JavaScript: "bg-yellow-400" },
-      ],
-      repoLink: "https://github.com/fabiojr0/MarveLous",
-      hr: false,
-    },
+      tags: ["React", "API"],
+      codeLink: "https://github.com/fabiojr0/Pipocando-filmes",
+      demoLink: "https://github.com/fabiojr0/Pipocando-filmes"
+    }
   ];
 
   return (
-    <div
-      className="flex flex-col justify-between items-center gap-10"
-      id="Projects"
-    >
-      <h2 className="gradientText gradientBP font-bold text-xl">Projetos</h2>
-      <div className="flex flex-col items-center p-2 gap-6 sm:items-start w-full">
-        {projectsImgs.map((item) => {
-          return (
-            <a
-              key={item.name}
-              className="flex flex-col items-center gap-6 cursor-pointer"
-              target="_blank"
-              href={item.repoLink}
-              rel="noreferrer"
+    <div className="py-20 bg-gray-50" id="Projects">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold gradientText gradientBP mb-4">
+            Projetos
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Alguns dos projetos que desenvolvi recentemente
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <div className="flex max-lg:flex-wrap items-center gap-4 w-screen px-4 sm:h-60 sm:px-16">
+              {/* Project Image */}
+              <div className="h-48 overflow-hidden">
                 <img
-                  src={item.img}
-                  className="h-2/3 aspect-[19/9] rounded-xl sm:w-auto drop-shadow-xl lg:h-full"
+                  src={project.img}
+                  alt={project.name}
+                  className="w-full h-full object-cover"
                 />
-                <div className="flex flex-col gap-2">
-                  <div className="cursor-pointer flex gap-1 items-center dark:text-zinc-100">
-                    <h3 className="font-semibold text-sm sm:text-xl">
-                      {item.name}
-                    </h3>{" "}
-                    <FontAwesomeIcon icon={faGithub} style={iconStyles} />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {item.languages.map((language) => {
-                      return (
-                        <LanguageLabel
-                          color={Object.values(language)}
-                          name={Object.keys(language)}
-                          key={Object.keys(language)}
-                        />
-                      );
-                    })}
-                  </div>
-                  <p className="text-xs sm:text-base dark:text-zinc-200">
-                    {item.desc}
-                  </p>
+              </div>
+              
+              {/* Project Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  {project.name}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {project.desc}
+                </p>
+                
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span 
+                      key={tagIndex}
+                      className="px-3 py-1 bg-blue-50 text-blue-700 text-sm font-medium rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <a
+                    href={project.codeLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                  >
+                    <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                    Código
+                  </a>
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                  >
+                    <FontAwesomeIcon icon={faPlay} className="mr-2" />
+                    Demo
+                  </a>
                 </div>
               </div>
-              {item.hr === true ? (
-                <hr className="bg-varPink w-5/6 h-0.5 sm:w-4/5" />
-              ) : (
-                <></>
-              )}
-            </a>
-          );
-        })}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
