@@ -3,38 +3,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
 function BackToTop() {
-
     const [isVisible, setIsVisible] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
+            top: 0,
+            behavior: 'smooth',
         });
     };
 
-    const handleScroll = () => {
-        if (window.pageYOffset > 100) {
-        setIsVisible(true);
-        } else {
-        setIsVisible(false);
-        }
-    };
-
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
+        const handleScroll = () => {
+            setIsVisible(window.pageYOffset > 300);
         };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
-      <div className={`fixed max-sm:hidden rounded-full right-4 bottom-4 bg-varPink h-8 w-8 grid place-items-center
-       hover:bg-varBlue transition-all ${isVisible ? 'scale-100' : 'scale-0'} cursor-pointer`} 
-      onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff"}}/>
-      </div>
+      <button
+        className={`fixed right-5 bottom-5 w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white grid place-items-center shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-300 ${
+          isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+        } cursor-pointer z-40`}
+        onClick={scrollToTop}
+        aria-label="Voltar ao topo"
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-sm" />
+      </button>
     )
-  }
-  
-  export default BackToTop
-  
+}
+
+export default BackToTop

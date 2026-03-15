@@ -1,73 +1,104 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { navLinks, personalInfo } from "../data/portfolio";
+import SocialLinks from "./ui/SocialLinks";
+
+function FooterBrand() {
+  return (
+    <div className="sm:col-span-2 lg:col-span-1">
+      <h3 className="text-2xl font-bold text-white mb-2">
+        <span className="gradientText gradientBP">{personalInfo.logo}</span>
+      </h3>
+      <p className="text-slate-400 leading-relaxed text-sm sm:text-base mt-3">
+        {personalInfo.shortDescription}
+      </p>
+    </div>
+  );
+}
+
+function FooterQuickLinks() {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+        Links Rápidos
+      </h3>
+      <ul className="space-y-2.5">
+        {navLinks.map((link) => (
+          <li key={link.to}>
+            <a
+              href={`#${link.to}`}
+              className="text-slate-400 hover:text-indigo-400 transition-colors duration-300 text-sm sm:text-base inline-flex items-center group"
+            >
+              <span className="w-0 group-hover:w-4 h-px bg-indigo-400 mr-0 group-hover:mr-2 transition-all duration-300" />
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FooterContact() {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+        Contato
+      </h3>
+      <div className="space-y-3">
+        <a
+          href={personalInfo.phoneHref}
+          className="flex items-center text-slate-400 hover:text-indigo-400 transition-colors duration-300 text-sm sm:text-base"
+        >
+          <FontAwesomeIcon icon={faPhone} className="mr-3 text-indigo-400/70 text-sm" />
+          {personalInfo.phone}
+        </a>
+        <a
+          href={`mailto:${personalInfo.email}`}
+          className="flex items-center text-slate-400 hover:text-indigo-400 transition-colors duration-300 text-sm sm:text-base"
+        >
+          <FontAwesomeIcon icon={faEnvelope} className="mr-3 text-indigo-400/70 text-sm" />
+          {personalInfo.email}
+        </a>
+        <SocialLinks variant="dark" className="mt-5" />
+      </div>
+    </div>
+  );
+}
 
 function Footer() {
   return (
-    <footer className="py-12 sm:py-16 border-t border-gray-700 w-full">
-      <div className="w-full flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
-          {/* About Section */}
-          <div className="sm:col-span-2 lg:col-span-1 ">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">Fábio Júnior</h3>
-            <p className=" leading-relaxed text-sm sm:text-base">
-              Desenvolvedor Front-end apaixonado por criar experiências digitais incríveis.
-            </p>
-          </div>
+    <footer className="relative overflow-hidden w-full">
+      {/* Dark gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
-              <li><a href="#Home" className=" transition-colors text-sm sm:text-base">Início</a></li>
-              <li><a href="#Habilities" className=" transition-colors text-sm sm:text-base">Habilidades</a></li>
-              <li><a href="#Projects" className=" transition-colors text-sm sm:text-base">Projetos</a></li>
-              <li><a href="#About" className=" transition-colors text-sm sm:text-base">Sobre</a></li>
-            </ul>
-          </div>
+      {/* Subtle decorative elements */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl" />
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-4">Contato</h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
-                <FontAwesomeIcon icon={faPhone} className="mr-3 text-blue-400 text-sm sm:text-base" />
-                <span className=" text-sm sm:text-base">(21) 98249-1902</span>
-              </div>
-              <div className="flex items-center">
-                <span className=" text-sm sm:text-base break-all">dev.fabiojunior@gmail.com</span>
-              </div>
-              <div className="flex gap-4 mt-4">
-                <a
-                  href="https://github.com/fabiojr0"
-                  target="_blank"
-                  rel="noreferrer"
-                  className=" transition-colors"
-                >
-                  <FontAwesomeIcon icon={faGithub} className="text-xl sm:text-2xl" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/fabiojr0/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className=" transition-colors"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} className="text-xl sm:text-2xl" />
-                </a>
-              </div>
-            </div>
+      <div className="relative">
+        <div className="h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12">
+            <FooterBrand />
+            <FooterQuickLinks />
+            <FooterContact />
           </div>
         </div>
 
         {/* Copyright */}
-      </div>
-        <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm">
-            © 2025 Fábio Júnior. Todos os direitos reservados.
-          </p>
+        <div className="border-t border-slate-800">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+            <p className="text-slate-500 text-xs sm:text-sm text-center">
+              © {new Date().getFullYear()} {personalInfo.name}. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
-  )
+  );
 }
-export default Footer
+
+export default Footer;
