@@ -92,7 +92,7 @@ export const timelineData = [
     title: "Formação Profissional",
     subtitle: "Unilasalle RJ",
     description:
-      "Atualmente cursando o 7º período de Sistemas de Informação",
+      "Cursando o 8º período de Sistemas de Informação",
     icon: faGraduationCap,
     gradient: "from-indigo-500 to-blue-500",
     year: "2022 - Atualmente",
