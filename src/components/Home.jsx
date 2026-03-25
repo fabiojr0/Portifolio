@@ -11,11 +11,11 @@ function HeroImage() {
   return (
     <div className="flex-1 flex justify-center lg:justify-end w-full lg:w-auto animate-fadeInUp-delay-3">
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-3xl blur-2xl animate-pulse-glow" />
-        <div className="relative aspect-video w-[85vw] lg:max-w-[32vw] rounded-3xl shadow-2xl shadow-indigo-500/10 overflow-hidden animate-float">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-rose-500/10 rounded-3xl blur-2xl" />
+        <div className="relative aspect-video w-[85vw] lg:max-w-[32vw] rounded-3xl shadow-xl shadow-zinc-900/5 dark:shadow-black/20 overflow-hidden animate-float border border-zinc-200/60 dark:border-zinc-700/40">
           <img
             src={personalInfo.heroImage}
-            alt="Abstract waves design"
+            alt="Fábio programando"
             className="w-full h-full object-cover"
           />
         </div>
@@ -28,18 +28,19 @@ function HeroContent() {
   return (
     <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left">
       <div className="space-y-3 lg:space-y-4 animate-fadeInUp">
-        <p className="text-sm sm:text-base font-medium text-indigo-500 tracking-wider uppercase">
+        <p className="text-sm sm:text-base font-semibold text-red-600 dark:text-red-400 tracking-widest uppercase">
           {personalInfo.role}
         </p>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none">
           Olá, sou o
         </h1>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradientText gradientBP leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-white tracking-tight leading-none">
           {personalInfo.name}
+          <span className="text-red-500">.</span>
         </h1>
       </div>
 
-      <p className="text-base sm:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fadeInUp-delay-1">
+      <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-[55ch] mx-auto lg:mx-0 leading-relaxed animate-fadeInUp-delay-1">
         {personalInfo.description}
       </p>
 
@@ -58,7 +59,7 @@ function HeroContent() {
           smooth={true}
           offset={-80}
           duration={500}
-          className="inline-flex items-center justify-center px-7 py-3.5 cursor-pointer bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:border-indigo-300 hover:text-indigo-600 transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md text-sm sm:text-base"
+          className="inline-flex items-center justify-center px-7 py-3.5 cursor-pointer bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-semibold rounded-xl border border-zinc-200 dark:border-zinc-700 hover:border-red-300 dark:hover:border-red-500 hover:text-red-600 dark:hover:text-red-400 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm hover:shadow-md text-sm sm:text-base"
         >
           <FontAwesomeIcon icon={faEye} className="mr-2" />
           Ver projetos
@@ -70,7 +71,7 @@ function HeroContent() {
 
 function Home() {
   return (
-    <div id="Home" className="relative min-h-[80vh] w-full flex justify-center items-center bg-[#fafbff]">
+    <div id="Home" className="relative min-h-[80vh] w-full flex justify-center items-center bg-[#fafafa] dark:bg-zinc-950 transition-colors duration-300">
       <div className="h-full w-full max-w-7xl">
         <div className="absolute top-0 left-0 right-0 z-10">
           <Navbar />

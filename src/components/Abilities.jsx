@@ -9,7 +9,7 @@ function Habilities() {
 
   return (
     <div className="py-20 sm:py-28 relative" id="Habilities">
-      <div className="  mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Skills"
           title="Habilidades"
@@ -18,7 +18,7 @@ function Habilities() {
 
         <div
           ref={gridRef}
-          className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
         >
           {skillCategories.map((category, index) => (
             <SkillCard

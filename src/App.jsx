@@ -8,7 +8,7 @@ import BackToTop from "./components/BackToTop"
 function App() {
 
   return (
-    <div className="flex flex-col items-center bg-[#fafbff]">
+    <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-950 transition-colors duration-300">
       <Home/>
 
       <div className="w-full max-w-5xl section-divider" />

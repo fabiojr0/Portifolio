@@ -10,9 +10,9 @@ function Projects() {
   return (
     <div className="py-20 sm:py-28 relative" id="Projects">
       {/* Subtle background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-50/20 dark:via-red-950/10 to-transparent pointer-events-none" />
 
-      <div className="relative   mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Portfolio"
           title="Projetos"

@@ -10,7 +10,7 @@ export const personalInfo = {
   shortDescription:
     "Desenvolvedor Front-end apaixonado por criar experiências digitais incríveis.",
   resumeUrl: "./curriculo_fabio_junior.pdf",
-  heroImage: "./gradient.png",
+  heroImage: "./programando.png",
   email: "dev.fabiojunior@gmail.com",
   phone: "(21) 98249-1902",
   phoneHref: "tel:+5521982491902",
@@ -39,26 +39,26 @@ export const socialLinks = [
 export const skillCategories = [
   {
     title: "Frontend",
-    icon: "💻",
-    gradient: "from-indigo-500 to-blue-500",
-    lightBg: "bg-indigo-50",
-    lightText: "text-indigo-600",
+    iconType: "code",
+    gradient: "from-red-500 to-rose-500",
+    lightBg: "bg-red-50 dark:bg-red-950/30",
+    lightText: "text-red-700 dark:text-red-300",
     skills: ["NextJS", "React Native", "React", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Design",
-    icon: "🎨",
-    gradient: "from-purple-500 to-pink-500",
-    lightBg: "bg-purple-50",
-    lightText: "text-purple-600",
+    iconType: "palette",
+    gradient: "from-rose-500 to-red-400",
+    lightBg: "bg-rose-50 dark:bg-rose-950/30",
+    lightText: "text-rose-700 dark:text-rose-300",
     skills: ["Figma", "UI/UX", "Responsive Design"],
   },
   {
     title: "Ferramentas",
-    icon: "🔧",
-    gradient: "from-pink-500 to-rose-500",
-    lightBg: "bg-pink-50",
-    lightText: "text-pink-600",
+    iconType: "wrench",
+    gradient: "from-red-400 to-orange-500",
+    lightBg: "bg-orange-50 dark:bg-orange-950/30",
+    lightText: "text-orange-700 dark:text-orange-300",
     skills: ["Git", "SQL", "Redux", "Unity"],
   },
 ];
@@ -94,7 +94,7 @@ export const timelineData = [
     description:
       "Cursando o 8º período de Sistemas de Informação",
     icon: faGraduationCap,
-    gradient: "from-indigo-500 to-blue-500",
+    gradient: "from-red-500 to-rose-500",
     year: "2022 - Atualmente",
   },
   {
@@ -103,7 +103,7 @@ export const timelineData = [
     description:
       "Desenvolvo o site e app, com a proposta de delivery focado em mercado.",
     icon: faBriefcase,
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-rose-500 to-red-400",
     year: "2023 - Atualmente",
   },
 ];

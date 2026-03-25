@@ -8,11 +8,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        varPink: "#E70FAA",
-        varBlue: "#13B0F5"
-      }
+        accent: {
+          DEFAULT: "#ef4444",
+          light: "#fee2e2",
+          dark: "#dc2626",
+        },
+        surface: {
+          DEFAULT: "#fafafa",
+          raised: "#ffffff",
+          muted: "#f4f4f5",
+        }
+      },
+      fontFamily: {
+        sans: ['Outfit', 'sans-serif'],
+      },
     },
   },
   plugins: [],
 }
-

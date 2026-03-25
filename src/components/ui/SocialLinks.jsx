@@ -4,8 +4,8 @@ import { socialLinks } from "../../data/portfolio";
 
 function SocialLinks({ className = "", iconSize = "text-lg sm:text-xl", variant = "light" }) {
   const variants = {
-    light: "text-gray-500 hover:text-indigo-600",
-    dark: "w-10 h-10 rounded-xl bg-slate-800/80 flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-500/20",
+    light: "text-zinc-400 dark:text-zinc-500 hover:text-red-600 dark:hover:text-red-400",
+    dark: "w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-red-500/20",
   };
 
   const linkClass = variants[variant] || variants.light;
